@@ -1,6 +1,6 @@
-# Buddy SOS Slack
+# Buddy Slack
 
-Buddy SOS is an opencode plugin that exposes Slack read and write tools through a project-owned Slack app.
+Buddy Slack is an opencode plugin that exposes Slack read and write tools through a project-owned Slack app.
 
 ## Install
 
@@ -18,9 +18,9 @@ Add the plugin to opencode using the local plugin file URL or path for `src/inde
 
 ## Auth
 
-Slack OAuth is local. Set `SLACK_CLIENT_ID`, `SLACK_CLIENT_SECRET`, and `BUDDY_SOS_SLACK_REDIRECT_URI`, then call `slack_auth_start` from opencode. Open the returned Slack authorization URL, complete the flow, and call `slack_auth_status`.
+Slack OAuth is local. Set `SLACK_CLIENT_ID`, `SLACK_CLIENT_SECRET`, and `BUDDY_SLACK_REDIRECT_URI`, then call `slack_auth_start` from opencode. Open the returned Slack authorization URL, complete the flow, and call `slack_auth_status`.
 
-OAuth credentials are stored in the macOS Keychain under the `buddy-sos.slack` service. `SLACK_USER_TOKEN` is supported only as a local development fallback.
+OAuth credentials are stored in the macOS Keychain under the `buddy-slack` service. `SLACK_USER_TOKEN` is supported only as a local development fallback.
 
 ## Tools
 

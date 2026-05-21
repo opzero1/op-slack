@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "buddy-sos-slack",
+      "name": "buddy-slack",
       "dependencies": {
         "@opencode-ai/plugin": "^1.15.5",
         "effect": "^3.21.2",

@@ -1,6 +1,6 @@
 import { Effect } from "effect"
 
-const SERVICE = "buddy-sos.slack"
+const SERVICE = "buddy-slack"
 const CURRENT_ACCOUNT = "__current__"
 
 export class KeychainError extends Error {

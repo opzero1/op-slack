@@ -84,7 +84,7 @@ export function makeSlackClient(fetchImpl: FetchLike = fetch): SlackClient {
   }
 }
 
-export class SlackClientService extends Context.Tag("buddy-sos/SlackClient")<SlackClientService, SlackClient>() {}
+export class SlackClientService extends Context.Tag("buddy-slack/SlackClient")<SlackClientService, SlackClient>() {}
 
 export const SlackClientLive = Layer.succeed(SlackClientService, makeSlackClient())
 

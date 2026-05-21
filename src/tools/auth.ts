@@ -6,7 +6,7 @@ import type { SlackAuthStatus } from "../types.js"
 import { jsonResult, runTool } from "./common.js"
 
 export const slack_auth_start = tool({
-  description: "Start local Slack OAuth for Buddy SOS and return the Slack authorization URL.",
+  description: "Start local Slack OAuth for Buddy Slack and return the Slack authorization URL.",
   args: {},
   async execute() {
     return runTool(
@@ -51,7 +51,7 @@ export const slack_auth_finish = tool({
 })
 
 export const slack_auth_status = tool({
-  description: "Show whether Buddy SOS has a Slack user token available from env or OS keychain.",
+  description: "Show whether Buddy Slack has a Slack user token available from env or OS keychain.",
   args: {},
   async execute() {
     return runTool(
@@ -78,7 +78,7 @@ export const slack_auth_status = tool({
 })
 
 export const slack_disconnect = tool({
-  description: "Remove the current Buddy SOS Slack token pointer and token from the OS keychain.",
+  description: "Remove the current Buddy Slack token pointer and token from the OS keychain.",
   args: {},
   async execute() {
     return runTool(
@@ -86,7 +86,7 @@ export const slack_disconnect = tool({
         yield* deleteToken()
         return {
           title: "Slack disconnected",
-          output: "Removed the current Buddy SOS Slack token from the OS keychain.",
+          output: "Removed the current Buddy Slack token from the OS keychain.",
         }
       }),
     )

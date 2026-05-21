@@ -39,7 +39,7 @@ export class OAuthError extends Error {
 }
 
 function redirectUri() {
-  return getEnv("BUDDY_SOS_SLACK_REDIRECT_URI") ?? "http://127.0.0.1:34267/oauth/slack/callback"
+  return getEnv("BUDDY_SLACK_REDIRECT_URI") ?? "http://127.0.0.1:34267/oauth/slack/callback"
 }
 
 function randomState() {
@@ -111,15 +111,15 @@ function startServer(state: string, redirect: string) {
       if (url.pathname !== callbackUrl.pathname) return new Response("Not found", { status: 404 })
       if (url.searchParams.get("state") !== state) {
         reject(new OAuthError("Slack OAuth state mismatch"))
-        return html("Buddy SOS Slack authorization failed: state mismatch.")
+        return html("Buddy Slack authorization failed: state mismatch.")
       }
       const code = url.searchParams.get("code")
       if (!code) {
         reject(new OAuthError("Slack OAuth callback did not include a code"))
-        return html("Buddy SOS Slack authorization failed: missing code.")
+        return html("Buddy Slack authorization failed: missing code.")
       }
       Effect.runPromise(exchangeCode(code, redirect)).then(resolve, reject)
-      return html("Buddy SOS Slack authorization complete. You can return to opencode.")
+      return html("Buddy Slack authorization complete. You can return to opencode.")
     },
   })
 
@@ -143,7 +143,7 @@ export function startOAuth() {
 
       const url = new URL("https://slack.com/oauth/v2/authorize")
       url.searchParams.set("client_id", requiredEnv("SLACK_CLIENT_ID"))
-      url.searchParams.set("user_scope", commaListEnv("BUDDY_SOS_SLACK_USER_SCOPES", DEFAULT_USER_SCOPES).join(","))
+      url.searchParams.set("user_scope", commaListEnv("BUDDY_SLACK_USER_SCOPES", DEFAULT_USER_SCOPES).join(","))
       url.searchParams.set("redirect_uri", redirect)
       url.searchParams.set("state", state)
       return {

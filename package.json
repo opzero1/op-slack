@@ -1,9 +1,9 @@
 {
-  "name": "buddy-sos-slack",
+  "name": "buddy-slack",
   "version": "0.1.0",
   "type": "module",
   "private": true,
-  "description": "Buddy SOS Slack plugin for opencode.",
+  "description": "Buddy Slack plugin for opencode.",
   "exports": {
     ".": "./src/index.ts"
   },

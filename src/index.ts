@@ -52,6 +52,6 @@ export const server: Plugin = async () => ({
 })
 
 export default {
-  id: "buddy-sos.slack",
+  id: "buddy.slack",
   server,
 } satisfies PluginModule

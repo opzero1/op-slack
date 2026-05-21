@@ -121,7 +121,7 @@ export const slack_send_message_draft = tool({
         })
         return yield* Effect.fail(
           new SlackUnavailableError(
-            "slack_send_message_draft is unavailable: Buddy SOS has not found a Slack-supported API path for ChatGPT-style attached drafts. This is a blocked feature exception, not a local draft substitute.",
+            "slack_send_message_draft is unavailable: Buddy Slack has not found a Slack-supported API path for ChatGPT-style attached drafts. This is a blocked feature exception, not a local draft substitute.",
           ),
         )
       }),
