@@ -4,6 +4,7 @@
   "workspaces": {
     "": {
       "name": "buddy-slack",
+      "version": "0.1.1",
       "dependencies": {
         "@opencode-ai/plugin": "^1.15.5",
         "effect": "^3.21.2",

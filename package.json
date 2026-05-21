@@ -1,11 +1,19 @@
 {
   "name": "buddy-slack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
-  "private": true,
   "description": "Buddy Slack plugin for opencode.",
+  "license": "MIT",
   "exports": {
     ".": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "README.md",
+    ".env.example"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "check": "tsc --noEmit",

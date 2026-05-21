@@ -8,11 +8,11 @@ Buddy Slack is an opencode plugin that exposes Slack read and write tools throug
 bun install
 ```
 
-Add the plugin to opencode using the local plugin file URL or path for `src/index.ts`.
+Add the plugin to opencode by package name.
 
 ```json
 {
-  "plugin": ["./src/index.ts"]
+  "plugin": ["buddy-slack"]
 }
 ```
 
